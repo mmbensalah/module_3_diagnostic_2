@@ -3,7 +3,9 @@ class StationFacade
   end
 
   def stations(fuel, zip)
-    service.get_stations(fuel, zip)
+    service.get_stations(fuel, zip)[:fuel_stations].map do |station|
+      Station.new(station)
+    end
   end
 
   private
