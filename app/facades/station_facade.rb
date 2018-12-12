@@ -2,8 +2,8 @@ class StationFacade
   def initialize
   end
 
-  def stations(fuel, zip)
-    service.get_stations(fuel, zip)[:fuel_stations].map do |station|
+  def stations(location)
+    service.get_stations(location)[:fuel_stations].map do |station|
       Station.new(station)
     end
   end

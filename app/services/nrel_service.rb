@@ -2,9 +2,10 @@ class NrelService
   def initialize
   end
 
-  def get_stations(location, fuel_type)
-    to_json("/api/alt-fuel-stations/v1/nearest.json?&location=#{location}&fuel_type=#{fuel_type}&limit=10")
+  def get_stations(location)
+    to_json("/api/alt-fuel-stations/v1/nearest.json?&location=#{location}&fuel_type=LPG,ELEC&limit=10")
   end
+
   private
 
   def to_json(url)

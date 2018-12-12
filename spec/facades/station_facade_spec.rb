@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Station Facade' do
   it 'should return 8 stations for the zip code' do
-    VCR.use_cassette('StationFacade') do
+    # VCR.use_cassette('StationFacade') do
       facade = StationFacade.new
-      response = facade.stations(80203, 'LPG,ELEC')
+      response = facade.stations(80203)
 
       expect(response.count).to eq(10)
 
@@ -16,6 +16,6 @@ RSpec.describe 'Station Facade' do
       expect(response[0].state).to eq("CO")
       expect(response[0].street_address).to eq("800 Acoma St")
       expect(response[0].zip).to eq("80204")
-    end
+    # end
   end
 end
