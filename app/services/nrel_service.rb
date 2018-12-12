@@ -2,8 +2,8 @@ class NrelService
   def initialize
   end
 
-  def get_stations(zip)
-    to_json("/api/alt-fuel-stations/v1.json?fuel_type=LPG,ELEC&zip=#{zip}&limit=10")
+  def get_stations(fuel, zip)
+    to_json("/api/alt-fuel-stations/v1.json?fuel_type=#{fuel}&zip=#{zip}&limit=10")
   end
 
   private
