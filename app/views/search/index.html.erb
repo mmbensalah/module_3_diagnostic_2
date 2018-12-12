@@ -1,1 +1,13 @@
 <h1>Stations</h1>
+
+<div class="station">
+  <p><% @stations.each do |station| %>
+      <%= station.name %>
+      <%= station.street_address %>
+      <%= station.state %>
+      <%= station.zip %>
+      <%= station.fuel_type %>
+      <%= station.distance %>
+      <%= station.access %>
+    <% end %>
+  </p>
